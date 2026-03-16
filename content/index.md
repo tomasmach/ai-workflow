@@ -48,7 +48,7 @@ Můj osobní přístup k AI-driven developmentu. Vše co používám, jak to pou
 
 ---
 
-## Modely na první pohled
+## Přehled modelů
 
 | Model | Kdy |
 |-------|-----|

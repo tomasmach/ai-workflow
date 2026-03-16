@@ -5,7 +5,7 @@ tags:
 
 # AI Agenti - Přehled a Doporučení
 
-Moje osobní zkušenosti s AI agenty, subscripcemi a co se vyplatí.
+Moje osobní zkušenosti s AI agenty, subscriptions a co se vyplatí.
 
 ---
 

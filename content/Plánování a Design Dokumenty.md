@@ -47,7 +47,7 @@ Navazuje na design dokument.
 
 Claude Code má Plan Mode - AI napíše plán a **nespustí žádný kód**.
 
-Po dokončení plánu se zobrazí tlačítko které spustí implementaci s čistým kontextem. Tato funkce je unikátní pro Claude Code - ostatní nástroje Plan Mode sice mají, ale čistý kontext před implementací musíš řešit ručně.
+Po dokončení plánu se zobrazí tlačítko které spustí implementaci s čistým kontextem. Plan Mode mají i ostatní nástroje (OpenCode, Codex...), ale funkce "Clear context and execute plan" je unikátní pro Claude Code. Jinde musíš čistý kontext před implementací řešit ručně.
 
 **Jak ho použít:**
 1. Aktivuj Plan Mode před zadáním tasku
