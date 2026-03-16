@@ -13,8 +13,6 @@ Přehled nástrojů, které používám pro AI-driven development.
 
 Primární nástroj. Terminálový AI coding agent od Anthropic, běží přímo v terminálu a pracuje s celým repozitářem.
 
-Vždy spouštím s `--dangerously-skip-permissions`, ať nemusím každou chvíli potvrzovat povolení pro každý příkaz.
-
 **Proč Claude Code:**
 - Nejlepší pochopení kontextu celého projektu
 - Nativní integrace s gitem (branche, commity, PR)
@@ -25,28 +23,27 @@ Vždy spouštím s `--dangerously-skip-permissions`, ať nemusím každou chvíl
 
 ## OpenCode
 
-TUI (terminal UI) alternativa, která agreguje více AI modelů na jednom místě.
+TUI (terminal UI) pro AI-driven development. Není to agent sám o sobě - je to rozhraní přes které se připojíš k prakticky jakémukoliv AI poskytovateli (Anthropic, OpenAI, Google, Mistral...). Za mě **nejlepší TUI** co existuje.
 
 **Proč OpenCode:**
-- Jedno TUI pro všechny zaplacené subscripce (Claude, GPT, Gemini...)
+- Připojíš si vlastní subscripce od různých AI firem, všechno na jednom místě
 - Lze spustit jako server, připojíš se z libovolného počítače na stejné síti
-- Nejlépe poskládané UI ze všech terminal agentů
-- Ideální pokud nechceš být locked-in na jeden model
-- Doporučuju jako default pokud nepoužíváš Anthropic ekosystém
+- Nejlépe poskládané UI ze všech terminálových nástrojů
+- Ideální pokud nechceš být locked-in na jednoho poskytovatele
 
 > Repozitář: [opencode.ai](https://opencode.ai)
-
-**Pozor na vendor lock u Anthropic:** Anthropic subscription (Pro/Max plan) se dá oficiálně použít pouze v Claude Code a Claude GUI/TUI. Claude Code se dá po ohýbání rozchodit i s jinými modely, ale subscription samotný je locked-in. Do OpenCode se dá přihlásit přes Anthropic OAuth, ale riskuješ tím ban účtu. Nestává se to často, ale stává se. Pokud chceš flexibilitu, jdi do OpenCode.
 
 ---
 
 ## Codex (OpenAI)
 
-Cloudový coding agent od OpenAI s vlastní GUI i TUI aplikací.
+Coding agent od OpenAI s GUI i TUI variantou.
 
 **Kdy ho použít:**
-- Alternativa pro GPT-5.4 / GPT-5.3-Codex modely
+- Alternativa pro GPT-4o / o3 modely
 - Vlastní izolované cloudové prostředí pro běh kódu
+
+**Osobní zkušenost:** GUI je dobré, TUI je na nic.
 
 ---
 
@@ -55,7 +52,7 @@ Cloudový coding agent od OpenAI s vlastní GUI i TUI aplikací.
 Místo Cursoru nebo Windsurfu (přijdou mi jako bloatware) preferuji čistý VS Code s relevantními rozšířeními.
 
 **Doporučené addony:**
-- Codex extension (inline suggestions)
+- GitHub Copilot (inline suggestions)
 - Claude Code extension (integrace přímo v editoru)
 
 ---

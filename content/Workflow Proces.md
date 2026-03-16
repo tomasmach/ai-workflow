@@ -52,10 +52,8 @@ Viz [[Git Workflow]].
 
 Po implementaci vždy spouštím:
 
-- **Code Review** - speciální skill který zkontroluje kód
-- **Simplify** - skill který zjednodušuje a čistí kód
-
-Oba jsou součástí [[Claude Code - Tipy a Triky#Superpowers|Superpowers]].
+- **Code Review** - skill ze [[Claude Code - Tipy a Triky#Superpowers|Superpowers]] který zkontroluje kód
+- **Simplify** - v Claude Code zabudovaný `/simplify`, v ostatních nástrojích skill ze Superpowers
 
 ---
 

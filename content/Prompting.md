@@ -60,7 +60,7 @@ Typický obsah:
 
 ### agents.md - ostatní nástroje
 
-Claude používá `CLAUDE.md`, ale jiné AI nástroje (Codex, OpenCode...) hledají `agents.md`. Obsah je identický, jen název souboru se liší. Pokud pracuješ v multi-tool prostředí, je potřeba mít oba.
+`agents.md` je totéž co `CLAUDE.md` - stejný formát, stejný obsah. Jediný rozdíl je v názvu souboru. Claude Code čte `CLAUDE.md`, prakticky všechny ostatní nástroje (Codex, OpenCode, Cursor, Windsurf...) čtou `agents.md`. Pokud pracuješ s víc nástroji, potřebuješ oba.
 
 ### Velikost CLAUDE.md
 

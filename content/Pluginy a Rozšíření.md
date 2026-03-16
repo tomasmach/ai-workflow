@@ -38,17 +38,18 @@ Instaluje se globálně, funguje napříč všemi projekty.
 
 ## Simplify
 
-Přímo součást Claude Code, žádná instalace.
-
 Zkontroluje a zjednoduší právě napsaný kód. Odstraní zbytečnou komplexitu, sjednotí styl, zlepší čitelnost.
 
 Spouštím vždy po Code Review.
+
+- **Claude Code** má od nedávna vlastní `/simplify` přímo zabudovaný - používám ten.
+- **Superpowers** mají vlastní `simplify` skill - použiju ho pokud pracuju v jiném nástroji než Claude Code.
 
 ---
 
 ## Co jsem zkoušel a nedoporučuji
 
-**Samostatný Code Review plugin** žere příliš mnoho tokenů. Používám `code-review` skill ze **Superpowers**, který dělá totéž efektivněji.
+**Samostatný Code Review plugin** žere příliš mnoho tokenů. Místo něho používám `code-review` skill ze **Superpowers**, který dělá totéž efektivněji.
 
 ---
 

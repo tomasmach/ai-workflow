@@ -5,7 +5,7 @@ tags:
 
 # AI Agenti - Přehled a Doporučení
 
-Moje osobní zkušenosti s AI agenty, subscriptions a co se vyplatí.
+Moje osobní zkušenosti s AI agenty, subscripcemi a co se vyplatí.
 
 ---
 
@@ -16,7 +16,7 @@ Moje osobní zkušenosti s AI agenty, subscriptions a co se vyplatí.
 Modely které používám:
 - **Sonnet 4.6** - 90 % práce. Naprostá většina tasků, implementace, debugging, refactoring.
 - **Opus 4.6** - jen na nejtěžší tasky a velké plánování. Žere víc tokenů, ale kde na tom záleží, stojí to za to.
-- **Haiku 4.5** - pro triviální tasky v rámci parallel agents, kde Sonnet by byl overkill.
+- **Haiku 4.5** - triviální tasky v rámci parallel agents (jednoduché čtení souborů, basic search, jednořádkové edity). Šetří tokeny tam kde Sonnet by byl overkill.
 
 **Strategie Opus + Sonnet subagenti:**
 Opus naplánuje a vyvolá paralelní subagenty → subagenti (Sonnet) implementují → Opus zkontroluje výsledky. Ušetří tokeny a zároveň využiješ silný model tam kde to má smysl.
@@ -41,7 +41,7 @@ Viz [[Plánování a Design Dokumenty]] a [[Claude Code - Tipy a Triky#Parallel 
 
 ### OpenAI Codex
 - Dobrá alternativa za $20
-- ⚠️ Poslední dobou snižuje limity, sleduj situaci
+- ⚠️ Poslední dobou zužuje limity, sleduj situaci
 
 ### Kimi 2.5
 - $20/měs, překvapivě dobrý výkon
