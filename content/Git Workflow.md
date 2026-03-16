@@ -55,6 +55,21 @@ chore: update dependencies
 
 ---
 
+## Co-authorship
+
+AI agenti (Claude Code, Codex...) se defaultně přidávají jako co-authors u commitů. Nelíbí se mi to, u commitu chci být napsaný jenom já.
+
+V Claude Code se to vypne v `~/.claude/settings.json`:
+
+```json
+"attribution": {
+  "commit": "",
+  "pr": ""
+}
+```
+
+---
+
 ## CLAUDE.md - Globální Git Pravidla
 
 V globálním `CLAUDE.md` mám definovaná pravidla pro git která platí napříč všemi projekty:

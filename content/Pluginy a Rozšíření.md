@@ -48,7 +48,7 @@ Spouštím vždy po Code Review.
 
 ## Co jsem zkoušel a nedoporučuji
 
-**Samostatný Code Review plugin** žere příliš mnoho tokenů. Místo něho používám `code-review` skill ze **Superpowers**, který dělá totéž efektivněji.
+**Samostatný Code Review plugin** žere příliš mnoho tokenů. Používám `code-review` skill ze **Superpowers**, který dělá totéž efektivněji.
 
 ---
 

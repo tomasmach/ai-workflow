@@ -51,6 +51,12 @@ Context7 při každém promptu stáhne aktuální dokumentaci a dá ji AI do kon
 
 ---
 
+## MCP servery žerou kontext
+
+I když MCP server právě nepoužíváš, jeho definice a tool descriptions zabírají místo v kontextu. Čím víc serverů máš zapnutých, tím míň kontextu zbývá pro tvou práci. Ideální je vypínat servery které zrovna nepotřebuješ.
+
+---
+
 ## Kde najít MCP servery
 
 - GitHub - hledej `mcp-server-*`

@@ -17,6 +17,12 @@ Každý AI model má omezený context window, tedy kolik textu "vidí" najednou.
 
 ---
 
+## Context compression
+
+Když se kontext blíží limitu, AI automaticky provede "context compression". Starší části konverzace se shrnou do kratší verze, aby se uvolnilo místo. Funguje to, ale v tomhle bodě už AI často halucinuje a ztrácí důležité detaily. Lepší je začít novou session než se spoléhat na kompresi.
+
+---
+
 ## Kdy začít novou session
 
 - Když AI začne opakovat stejné chyby nebo zapomíná co jsi řekl dřív

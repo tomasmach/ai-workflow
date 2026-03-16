@@ -34,12 +34,9 @@ Cíl: mít jasno v tom **co** buduješ předtím, než se začne psát kód.
 
 ## Implementační Plán
 
-Navazuje na design dokument.
+Navazuje na design dokument. Superpowers ho vytvoří automaticky po dokončení design docu, nemusíš nic extra zadávat.
 
-**Postup:**
-1. Řekni AI aby z design docu vytvořil implementační plán
-2. Plán obsahuje konkrétní kroky, pořadí, závislosti
-3. Review plánu, uprav co nesedí
+Plán obsahuje konkrétní kroky, pořadí a závislosti. Projdi ho a uprav co nesedí.
 
 ---
 
