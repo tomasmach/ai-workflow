@@ -5,7 +5,7 @@ tags:
 
 # Globální CLAUDE.md
 
-Můj globální konfigurační soubor pro Claude Code — uložen v `~/.claude/CLAUDE.md`.
+Můj globální konfigurační soubor pro Claude Code, uložen v `~/.claude/CLAUDE.md`.
 
 Platí napříč **všemi projekty**. AI si ho přečte automaticky na začátku každé session.
 

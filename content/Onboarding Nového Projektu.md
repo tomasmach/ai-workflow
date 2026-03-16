@@ -11,7 +11,7 @@ Jak připravit nový projekt pro AI-driven development od nuly.
 
 ## 1. Style Guide
 
-Vytvoř si style guide pro programovací jazyk, ve kterém budeš psát. Definuj konvence, formátování, naming — vše co má AI dodržovat. Toto jde rovnou do CLAUDE.md projektu.
+Vytvoř si style guide pro programovací jazyk, ve kterém budeš psát. Definuj konvence, formátování, naming. Ulož ho jako dokument v repozitáři a odkaz na něj dej do CLAUDE.md.
 
 ---
 
@@ -46,19 +46,13 @@ Velký design dokument rozděl na menší, konkrétní tasky:
 
 - Každý task by měl být dostatečně malý na jednu AI session
 - Jasně definovaný vstup a výstup
-- Postupně je láduj do AI — task po tasku
+- Postupně je láduj do AI, task po tasku
 
 ---
 
 ## 5. CLAUDE.md projektu
 
-Na základě style guide a design dokumentu vytvoř repozitářový CLAUDE.md:
-
-- Architektura projektu
-- Konvence a pravidla
-- Co nedělat (anti-patterns)
-
-AI si ho přečte automaticky na začátku každé session a drží se definovaných pravidel.
+CLAUDE.md moc neupravuješ ručně. AI si ho vytvoří a spravuje sám. Důležité dokumenty (style guide, design doc, architektura) drž jako samostatné soubory v repozitáři a v CLAUDE.md na ně pouze odkazuj.
 
 ---
 
