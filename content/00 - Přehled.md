@@ -21,6 +21,8 @@ Můj osobní přístup k AI-driven developmentu. Vše co používám, jak to pou
 - [[AI Agenti]] - přehled agentů, doporučené subscripce, zkušenosti
 - [[Pluginy a Rozšíření]] - doporučené pluginy pro Claude Code
 - [[Globální CLAUDE.md]] - můj globální konfigurační soubor
+- [[Context Management]] - jak efektivně pracovat s kontextem AI
+- [[Onboarding Nového Projektu]] - jak připravit nový projekt pro AI-driven development
 
 ---
 
