@@ -70,19 +70,33 @@ V Claude Code se to vypne v `~/.claude/settings.json`:
 
 ---
 
-## CLAUDE.md - Globální Git Pravidla
+## Cadence
 
-V globálním `CLAUDE.md` mám definovaná pravidla pro git která platí napříč všemi projekty:
+Commituj a pushuj často — po každém uceleném kroku a vždy před přepnutím na jiný task.
 
-- Conventional commits formát
-- Žádné scopy
-- Naming konvence pro branche
-- AI musí vždy commitovat, pushovat a vytvářet PR
-
-AI si tato pravidla přečte automaticky a drží se jich.
-
-Viz [[Prompting#CLAUDE.md|CLAUDE.md]].
+Důvod je praktický: AI-driven development produkuje změny rychleji, než je stíháš reviewovat. Když necháš narůst velký nerozdělený diff, ztrácíš schopnost říct, který krok co rozbil.
 
 ---
 
-*Viz také: [[Workflow Proces]], [[Prompting]]*
+## GitHub operace
+
+Na práci s GitHubem (PR, issues, API) používám lokální `gh` CLI, ne GitHub MCP nebo API. Je to rychlejší a nezabírá to kontext popisem nástrojů.
+
+---
+
+## Globální git pravidla
+
+V `~/.claude/CLAUDE.md` a `~/.codex/AGENTS.md` mám pravidla pro git, která platí napříč všemi projekty:
+
+- Conventional commits formát, žádné scopy
+- Naming konvence pro branche
+- Commit a push často
+- Nikdy necommitovat na default branch — nejdřív vytvořit branch
+
+AI si tato pravidla přečte automaticky a drží se jich. **Musí být v obou souborech** — viz [[Prompting#AGENTS.md - ostatní nástroje|AGENTS.md]].
+
+Viz [[Globální CLAUDE.md]].
+
+---
+
+*Viz také: [[Workflow Proces]], [[Prompting]], [[Globální CLAUDE.md]]*

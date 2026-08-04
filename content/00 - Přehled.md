@@ -11,18 +11,29 @@ Můj osobní přístup k AI-driven developmentu. Vše co používám, jak to pou
 
 ## Obsah
 
-- [[Nástroje]] - Claude Code, OpenCode, Codex, VS Code
+**Základ**
+- [[Nástroje]] - Claude Code, Codex, OpenCode, VS Code
+- [[Výběr Modelu]] - který model na jaký task
 - [[Workflow Proces]] - jak vypadá typická práce od nápadu po merge
-- [[Plánování a Design Dokumenty]] - design docy, implementační plány, Plan Mode
-- [[Claude Code - Tipy a Triky]] - Superpowers, parallel agents, správa kontextu
-- [[MCP Servery]] - co jsou MCP, Context7, GitHub, Playwright...
-- [[Git Workflow]] - branche, commity, PR, vše řídí AI
-- [[Prompting]] - jak psát prompty, CLAUDE.md konfigurace
-- [[AI Agenti]] - přehled agentů, doporučené subscripce, zkušenosti
-- [[Pluginy a Rozšíření]] - doporučené pluginy pro Claude Code
+
+**Nástroje do hloubky**
+- [[Codex CLI]] - gpt-5.6-sol na backend, investigaci a bulk práci
+- [[Claude Code - Tipy a Triky]] - Plan Mode, parallel agents, workflows
+- [[Skills]] - hlavní způsob rozšíření Claude Code
+- [[Pluginy a Rozšíření]] - co mám zapnuté a co jsem opustil
+- [[MCP Servery]] - co jsou MCP, Context7, Playwright...
+
+**Konfigurace**
 - [[Globální CLAUDE.md]] - můj globální konfigurační soubor
+- [[Prompting]] - jak psát prompty, CLAUDE.md a AGENTS.md
+- [[Memory a Hooks]] - persistent memory, hooks, settings.json
 - [[Context Management]] - jak efektivně pracovat s kontextem AI
-- [[Onboarding Nového Projektu]] - jak připravit nový projekt pro AI-driven development
+
+**Proces**
+- [[Plánování a Design Dokumenty]] - design docy, implementační plány, Plan Mode
+- [[Git Workflow]] - branche, commity, PR, vše řídí AI
+- [[Onboarding Nového Projektu]] - jak připravit nový projekt
+- [[AI Agenti]] - přehled agentů, subscripce, zkušenosti
 
 ---
 
@@ -32,8 +43,9 @@ Můj osobní přístup k AI-driven developmentu. Vše co používám, jak to pou
 
 1. Malá featura → rovnou prompt → AI implementuje
 2. Velká featura → design doc → implementační plán → AI implementuje
-3. AI vždy commituje, pushuje, vytváří PR
-4. Po implementaci: Code Review (Superpowers) → Simplify → Commit
+3. Backend a investigaci deleguj na [[Codex CLI|Codex]], UI a rozhodování nech na Claude
+4. AI vždy commituje, pushuje, vytváří PR
+5. Po implementaci: `/code-review` → `/simplify` → Commit
 
 ---
 
@@ -41,9 +53,9 @@ Můj osobní přístup k AI-driven developmentu. Vše co používám, jak to pou
 
 | Nástroj | Role |
 |---------|------|
-| [[Nástroje#Claude Code\|Claude Code]] | Primární coding agent |
+| [[Nástroje#Claude Code\|Claude Code]] | Primární agent — orchestrace, UI, rozhodování |
+| [[Codex CLI]] | Backend implementace, čtení kódu, investigace |
 | [[Nástroje#OpenCode\|OpenCode]] | Multi-model TUI, server mode |
-| [[Nástroje#Codex (OpenAI)\|Codex]] | Alternativa na OpenAI modely |
 | VS Code | Editor (bez Cursoru/Windsurfu) |
 
 ---
@@ -52,8 +64,10 @@ Můj osobní přístup k AI-driven developmentu. Vše co používám, jak to pou
 
 | Model | Kdy |
 |-------|-----|
-| Sonnet 4.6 | 90 % práce - implementace, debugging, refactoring |
-| Opus 4.6 | Nejtěžší tasky, velké plánování |
-| Haiku 4.5 | Triviální tasky v rámci parallel agents |
+| gpt-5.6-sol | Backend, investigace, bulk práce — přes [[Codex CLI]] |
+| fable-5 | Taste calls — UI, copy, tvar API. Review |
+| opus-4.8 | Náročné tasky, plánování, review |
+| sonnet-5 | Běžná práce a tenké wrappery |
+| ~~Haiku~~ | Nepoužívám, bez výjimek |
 
-Viz [[AI Agenti]] pro detaily o subscripcích.
+Podrobná pravidla v [[Výběr Modelu]].

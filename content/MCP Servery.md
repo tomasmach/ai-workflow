@@ -28,14 +28,30 @@ Funguje jako most mezi AI a světem mimo konverzaci.
 
 ## Servery které používám
 
+### Vývojářské
+
 | Server | K čemu |
 |--------|--------|
 | **Context7** | Up-to-date dokumentace knihoven |
-| **GitHub** | Čtení/zápis repozitářů, issues, PR přímo z AI |
 | **Playwright** | Browser automation, AI může ovládat prohlížeč |
 | **Supabase** | Přímé databázové operace |
-| **Obsidian** | Čtení a zápis do Obsidian vault |
+| **Vercel** | Deploy, env proměnné, logy |
+| **GitHub** | Čtení/zápis repozitářů, issues, PR |
+| **Pencil** | Editor `.pen` designových souborů |
+
+Většina z nich přichází s pluginem, ne jako samostatná instalace. Viz [[Pluginy a Rozšíření]].
+
+### Osobní / connectory
+
+| Server | K čemu |
+|--------|--------|
+| **Gmail** | Čtení vláken, drafty, štítky |
 | **Google Calendar** | Správa kalendáře |
+| **Google Drive** | Čtení dokumentů |
+| **Slack** | Čtení a psaní zpráv |
+| **Linear** | Issues a projekty |
+
+Connectory se autorizují přes OAuth v nastavení claude.ai. V headless nebo cron běhu nemusí být dostupné — počítej s tím u automatizací.
 
 ---
 
@@ -49,13 +65,26 @@ Context7 při každém promptu stáhne aktuální dokumentaci a dá ji AI do kon
 
 **Výsledek:** AI píše kód podle aktuální verze knihovny, ne té co znal při tréninku.
 
+Používej ho i u knihoven, které AI „zjevně zná" — React, Next.js, Tailwind. Právě u nich je největší šance, že si model pamatuje starší API.
+
+---
+
+## Kdy MCP a kdy skill
+
+Tohle se plete. MCP server přidává **nástroj** — schopnost něco udělat, co jinak nejde. Skill přidává **instrukce** — jak něco dělat dobře.
+
+Praktický příklad: pro Obsidian jsem MCP server opustil ve prospěch skillu `obsidian-cli`, který jen volá existující CLI. Když nástroj v systému už je, MCP vrstva navíc jen ubírá kontext.
+
+Viz [[Skills#Skill vs. plugin vs. MCP|srovnání vrstev]].
+
 ---
 
 ## Kde najít MCP servery
 
+- `/plugin` v Claude Code — oficiální marketplace
 - GitHub - hledej `mcp-server-*`
 - Komunity kolem jednotlivých nástrojů (Supabase, Linear, Notion...)
 
 ---
 
-*Viz také: [[Claude Code - Tipy a Triky]], [[Nástroje]]*
+*Viz také: [[Claude Code - Tipy a Triky]], [[Skills]], [[Pluginy a Rozšíření]]*

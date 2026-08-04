@@ -20,13 +20,13 @@ Jak přistupovat k plánování větších featur a projektů.
 
 Iterativní dokument který vytváříš **společně s AI**.
 
-Používám na to skill `brainstorming` ze [[Pluginy a Rozšíření#Superpowers|Superpowers]]. Ten exploruje záměr, požadavky a design předtím než se začne cokoliv implementovat.
-
 **Postup:**
-1. Spusť `brainstorming` skill
+1. Popiš AI záměr a nech ho ptát se na to, co není jasné
 2. AI klade otázky, ty odpovídáš
 3. Iteruj dokud nemáš jasno
 4. Výsledek uložíš jako design doc
+
+Klíčová část je ta druhá: nutit AI klást otázky, ne rovnou navrhovat. Když skočí rovnou k řešení, dostaneš pěkně napsaný dokument o něčem, co jsi nechtěl.
 
 Cíl: mít jasno v tom **co** buduješ předtím, než se začne psát kód.
 
@@ -124,6 +124,18 @@ git commit -m "feat: add memory config fields"
 ```
 
 Všimni si rozdílu oproti design docu: **konkrétní soubory s čísly řádků, přesný kód, přesné příkazy, TDD přístup (test first), každý task končí commitem**. AI tohle dokáže implementovat task po tasku bez dalších otázek.
+
+---
+
+## html-plan
+
+Na opravdu velké featury mám [[Skills|skill]] `html-plan`, který vygeneruje samostatný interaktivní HTML plán místo dlouhé zprávy v terminálu.
+
+**Kdy ho pustit:** featura sahá do víc subsystémů, vyžaduje architektonická rozhodnutí, migrace nebo etapovitou implementaci.
+
+**Kdy ne:** běžné plánování, lokální změny, opravy, obyčejné refaktory. Ani „tenhle task má víc kroků" není důvod.
+
+Ten rozdíl je v [[Globální CLAUDE.md|CLAUDE.md]] napsaný záměrně tvrdě — jinak si AI vyloží „velká featura" hodně velkoryse a vygeneruje HTML plán na tříbodový task.
 
 ---
 

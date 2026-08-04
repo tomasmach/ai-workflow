@@ -16,8 +16,23 @@ Primární nástroj. Terminálový AI coding agent od Anthropic, běží přímo
 **Proč Claude Code:**
 - Nejlepší pochopení kontextu celého projektu
 - Nativní integrace s gitem (branche, commity, PR)
-- Rozšiřitelný přes [[MCP Servery]] a [[Claude Code - Tipy a Triky#Superpowers|Superpowers]]
+- Rozšiřitelný přes [[Skills]], [[Pluginy a Rozšíření|pluginy]] a [[MCP Servery]]
 - Plan mode - napíše plán, pak čistý kontext + implementace
+- Orchestrace subagentů a [[Claude Code - Tipy a Triky#Workflows|workflows]]
+
+Dostupný je i mimo terminál — desktop aplikace, web, rozšíření do VS Code a JetBrains. Držím se terminálu.
+
+---
+
+## Codex CLI
+
+Coding agent od OpenAI, jediná cesta k modelu **gpt-5.6-sol**.
+
+Dnes na něm stojí veškerá backendová implementace, čtení kódu a investigace. Není to alternativa ke Claude Code, ale jeho doplněk — Claude orchestruje, Codex odvádí objemnou práci.
+
+Podrobně viz [[Codex CLI]].
+
+**Změna názoru:** dřív jsem psal, že GUI je dobré a TUI k ničemu. S gpt-5.6-sol se to obrátilo — `codex exec` volaný z Claude Code je dnes ta forma, kterou používám nejvíc.
 
 ---
 
@@ -35,18 +50,6 @@ TUI (terminal UI) pro AI-driven development. Není to agent sám o sobě - je to
 
 ---
 
-## Codex (OpenAI)
-
-Coding agent od OpenAI s GUI i TUI variantou.
-
-**Kdy ho použít:**
-- Alternativa pro GPT-4o / o3 modely
-- Vlastní izolované cloudové prostředí pro běh kódu
-
-**Osobní zkušenost:** GUI je dobré, TUI je na nic.
-
----
-
 ## VS Code + addony
 
 Místo Cursoru nebo Windsurfu (přijdou mi jako bloatware) preferuji čistý VS Code s relevantními rozšířeními.
@@ -54,6 +57,14 @@ Místo Cursoru nebo Windsurfu (přijdou mi jako bloatware) preferuji čistý VS 
 **Doporučené addony:**
 - GitHub Copilot (inline suggestions)
 - Claude Code extension (integrace přímo v editoru)
+
+---
+
+## vite-plus toolchain
+
+Node, npm, npx, corepack i `codex` u mě běží přes `~/.vite-plus`. Symlink `current` ukazuje na aktivní verzi.
+
+**Pozor při úklidu:** než smažeš „starou" verzi, rozřeš, kam `current` ukazuje. Jinak si odstřelíš aktivní toolchain včetně Codexu.
 
 ---
 
@@ -66,4 +77,4 @@ Místo Cursoru nebo Windsurfu (přijdou mi jako bloatware) preferuji čistý VS 
 
 ---
 
-*Viz také: [[Workflow Proces]], [[Claude Code - Tipy a Triky]]*
+*Viz také: [[Codex CLI]], [[Workflow Proces]], [[Claude Code - Tipy a Triky]]*

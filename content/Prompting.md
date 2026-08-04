@@ -11,9 +11,11 @@ Jak psát prompty a jak konfigurovat AI pro konzistentní výsledky.
 
 ## Základní pravidla
 
-### Piš anglicky
+### Instrukce piš anglicky
 
-I když AI rozumí česky, anglické prompty dávají konzistentně lepší výsledky. Kód a technická terminologie jsou primárně anglické, česky psaný prompt vytváří zbytečné tření.
+Konfigurační soubory (`CLAUDE.md`, `AGENTS.md`, skills) píšu vždy anglicky — pravidla v angličtině fungují konzistentněji, kód a technická terminologie jsou stejně anglické.
+
+**Jazyk odpovědi je něco jiného.** Ten se řeší zvlášť v `settings.json` (`"language": "czech"`) a s kvalitou instrukcí nesouvisí. Můžeš mít anglická pravidla a české odpovědi.
 
 ### Jasné a konkrétní zadání
 
@@ -36,11 +38,15 @@ Konfigurační soubor který AI přečte automaticky na začátku každé sessio
 Uložen v `~/.claude/CLAUDE.md`, platí napříč všemi projekty.
 
 Moje globální pravidla:
-- Conventional commits formát
-- Naming konvence pro branche
+- Conventional commits formát a naming konvence pro branche
+- Preferovaný tech stack
+- Code style, včetně pravidla proti automatickému doplňování popisků v UI
 - Dependency management (vždy nejnovější verze)
 - Python verze a package manager
-- Jak volit modely pro paralelní agenty
+- [[Výběr Modelu|Jak volit modely]] pro workflows a subagenty
+- Error policy — opravit i chyby, které s taskem nesouvisí
+
+Celý obsah viz [[Globální CLAUDE.md]].
 
 ### Repozitářový CLAUDE.md
 
@@ -58,9 +64,13 @@ Typický obsah:
 - Co nedělat / jak se vyhnout chybám specifickým pro projekt
 - Tech stack a klíčové závislosti
 
-### agents.md - ostatní nástroje
+### AGENTS.md - ostatní nástroje
 
-`agents.md` je totéž co `CLAUDE.md` - stejný formát, stejný obsah. Jediný rozdíl je v názvu souboru. Claude Code čte `CLAUDE.md`, prakticky všechny ostatní nástroje (Codex, OpenCode, Cursor, Windsurf...) čtou `agents.md`. Pokud pracuješ s víc nástroji, potřebuješ oba.
+`AGENTS.md` je totéž co `CLAUDE.md` - stejný formát, stejný obsah. Jediný rozdíl je v názvu souboru. Claude Code čte `CLAUDE.md`, prakticky všechny ostatní nástroje (Codex, OpenCode, Cursor, Windsurf...) čtou `AGENTS.md`. Pokud pracuješ s víc nástroji, potřebuješ oba.
+
+Platí to i globálně: `~/.claude/CLAUDE.md` a `~/.codex/AGENTS.md`.
+
+**Držet je synchronizované je nutnost, ne kosmetika.** Když backend a investigace jdou defaultně přes [[Codex CLI|Codex]], pravidlo, které je jen v CLAUDE.md, fakticky neplatí pro polovinu práce. Typický způsob, jak si tenhle problém způsobit: přidáš pravidlo do CLAUDE.md, pak se divíš, proč ho Codex ignoruje.
 
 ### Velikost CLAUDE.md
 
@@ -80,4 +90,4 @@ Stejný přístup platí pro [[Plánování a Design Dokumenty#Design Dokument|D
 
 ---
 
-*Viz také: [[Workflow Proces]], [[Plánování a Design Dokumenty]], [[Git Workflow]]*
+*Viz také: [[Globální CLAUDE.md]], [[Skills]], [[Memory a Hooks]], [[Workflow Proces]], [[Git Workflow]]*

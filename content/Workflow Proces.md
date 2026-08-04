@@ -52,8 +52,20 @@ Viz [[Git Workflow]].
 
 Po implementaci vždy spouštím:
 
-- **Code Review** - skill ze [[Claude Code - Tipy a Triky#Superpowers|Superpowers]] který zkontroluje kód
-- **Simplify** - v Claude Code zabudovaný `/simplify`, v ostatních nástrojích skill ze Superpowers
+- **`/code-review`** - zkontroluje pracovní diff, hledá chyby
+- **`/simplify`** - zjednoduší napsaný kód, odstraní zbytečnou komplexitu
+
+Obojí je v Claude Code zabudované. Na nezávislý druhý pohled navíc pouštím `codex review`, viz [[Codex CLI]].
+
+---
+
+## Volba modelu
+
+Ještě než začne implementace, rozhodni **kdo ji odvede**. U backendu je odpověď skoro vždy [[Codex CLI|Codex]], u UI naopak model s taste.
+
+Špatná volba modelu je dražší než špatný prompt — prompt opravíš v další zprávě, špatně napsaný kód reviewuješ, přepisuješ a stejně ti část projde.
+
+Viz [[Výběr Modelu]].
 
 ---
 
@@ -63,4 +75,4 @@ Po implementaci vždy spouštím:
 
 ---
 
-*Viz také: [[Plánování a Design Dokumenty]], [[Prompting]], [[Git Workflow]]*
+*Viz také: [[Plánování a Design Dokumenty]], [[Výběr Modelu]], [[Prompting]], [[Git Workflow]]*

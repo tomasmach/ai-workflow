@@ -17,12 +17,14 @@ Vytvoř si style guide pro programovací jazyk, ve kterém budeš psát. Definuj
 
 ## 2. Brainstorming
 
-Použij [[Pluginy a Rozšíření|Superpowers brainstorming skill]] k prozkoumání toho, co vlastně budeš stavět:
+Než začneš cokoliv psát, prozkoumej s AI, co vlastně stavíš:
 
 - Co má aplikace umět
 - Co by **neměla** umět (tohle je stejně důležité)
 - Jaké jsou omezení a constraints
 - Kdo je cílový uživatel
+
+Nech AI klást otázky. Viz [[Plánování a Design Dokumenty#Design Dokument|design dokument]].
 
 ---
 
@@ -52,7 +54,17 @@ Velký design dokument rozděl na menší, konkrétní tasky:
 
 ## 5. CLAUDE.md projektu
 
-CLAUDE.md moc neupravuješ ručně. AI si ho vytvoří a spravuje sám. Důležité dokumenty (style guide, design doc, architektura) drž jako samostatné soubory v repozitáři a v CLAUDE.md na ně pouze odkazuj.
+CLAUDE.md moc neupravuješ ručně. AI si ho vytvoří a spravuje sám (`/init`). Důležité dokumenty (style guide, design doc, architektura) drž jako samostatné soubory v repozitáři a v CLAUDE.md na ně pouze odkazuj.
+
+Pokud v projektu budeš používat i [[Codex CLI|Codex]] — u backendu skoro jistě ano — potřebuješ vedle toho `AGENTS.md` se stejným obsahem. Viz [[Prompting#agents.md - ostatní nástroje|AGENTS.md]].
+
+---
+
+## 6. Projektové skills
+
+Postupy specifické pro daný projekt — jak spustit aplikaci, jak nasadit, jak se testuje — patří do `.claude/skills/` v repozitáři. Commitnou se do gitu, takže je dostane každý, kdo repo naklonuje.
+
+Je to lepší místo než CLAUDE.md: skill se načte jen když je potřeba, zatímco CLAUDE.md zabírá kontext v každé session. Viz [[Skills#Skope|scope skills]].
 
 ---
 

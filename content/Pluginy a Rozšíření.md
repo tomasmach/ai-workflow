@@ -5,60 +5,70 @@ tags:
 
 # Pluginy a Rozšíření
 
-Doporučené pluginy pro Claude Code. Jedině ty co reálně používám.
+Pluginy pro Claude Code, které reálně používám.
+
+Plugin je distribuční obal — může přinést skills, agenty, slash commandy i MCP servery najednou. Instalují se z marketplace přes `/plugin`. Rozdíl oproti ostatním vrstvám rozšíření viz [[Skills#Skill vs. plugin vs. MCP|skill vs. plugin vs. MCP]].
 
 ---
 
-## Superpowers ⭐ Nejdůležitější
+## Co mám zapnuté
 
-> Repozitář: [github.com/obra/superpowers](https://github.com/obra/superpowers)
-
-Instaluje se globálně, funguje napříč všemi projekty.
-
-**Co to je:** Kolekce *skills* - workflow šablon které se načtou do Claude Code a vedou ho přes osvědčené procesy. Místo toho aby AI improvizoval, řídí se strukturovaným postupem.
-
-**Proč ho používám nonstop:**
-- Nahrazuje nutnost psát složité systémové prompty
-- Skills pokrývají nejčastější workflow (plánování, debugging, review...)
-- Dá se rozšiřovat vlastními skills
-
-**Skills které používám nejvíc:**
-
-| Skill | Kdy ho použiji |
-|-------|----------------|
-| `code-review` | Po každé větší implementaci |
-| `brainstorming` | Před novou featurou, exploruje požadavky |
-| `systematic-debugging` | Při jakémkoliv bugu |
-| `writing-plans` | Před komplexní implementací |
-| `TDD` | Když chci test-first přístup |
-
-**Jak spustit:** přirozeným jazykem nebo `/` v Claude Code, Superpowers skills se zobrazí automaticky.
+| Plugin | Co přidává |
+|--------|-----------|
+| **codex** | `codex:rescue` agent a setup pro [[Codex CLI]] — druhý nezávislý průchod, když se Claude zasekne |
+| **context7** | MCP server s aktuální dokumentací knihoven, viz [[MCP Servery#Context7 - nejdůležitější\|Context7]] |
+| **playwright** | Browser automation — ovládání prohlížeče, testování webových UI |
+| **github** | Práce s repozitáři, issues a PR |
+| **supabase** | Databázové operace |
+| **vercel** | Deploy, env proměnné, specializovaní agenti na Next.js a AI SDK |
+| **ui-ux-pro-max** | Knihovna designových stylů, palet, font pairů a UX pravidel |
 
 ---
 
-## Simplify
+## Zabudované nahradilo pluginy
 
-Zkontroluje a zjednoduší právě napsaný kód. Odstraní zbytečnou komplexitu, sjednotí styl, zlepší čitelnost.
+Claude Code má dnes nativně to, na co jsem dřív potřeboval plugin:
 
-Spouštím vždy po Code Review.
+| Příkaz | Co dělá |
+|--------|---------|
+| `/code-review` | Review pracovního diffu |
+| `/simplify` | Zjednodušení právě napsaného kódu — reuse, čitelnost, odstranění komplexity |
+| `/security-review` | Bezpečnostní kontrola |
+| `/review` | Review GitHub PR |
 
-- **Claude Code** má od nedávna vlastní `/simplify` přímo zabudovaný - používám ten.
-- **Superpowers** mají vlastní `simplify` skill - použiju ho pokud pracuju v jiném nástroji než Claude Code.
+Proto mám `code-simplifier` i samostatný `code-review` plugin **vypnuté** — dělaly totéž a žraly víc tokenů.
 
 ---
 
-## Co jsem zkoušel a nedoporučuji
+## Co jsem opustil
 
-**Samostatný Code Review plugin** žere příliš mnoho tokenů. Místo něho používám `code-review` skill ze **Superpowers**, který dělá totéž efektivněji.
+**Superpowers.** Dlouho to byl můj hlavní plugin — kolekce workflow skills (`brainstorming`, `systematic-debugging`, `writing-plans`, `TDD`, `code-review`). Dnes ho nepoužívám vůbec. Zabudované příkazy pokrývají review a simplify, na plánování mám vlastní [[Skills|skill]] `html-plan` a zbytek jsem nahradil vlastními skills, které sedí přesně na moji práci.
+
+**Samostatný Code Review plugin** — příliš mnoho tokenů oproti zabudovanému `/code-review`.
+
+---
+
+## Zapnutí a vypnutí
+
+Plugin nemusíš odinstalovávat, stačí ho vypnout v `~/.claude/settings.json`:
+
+```json
+"enabledPlugins": {
+  "context7@claude-plugins-official": true,
+  "code-simplifier@claude-plugins-official": false
+}
+```
+
+Viz [[Memory a Hooks#Další nastavení v settings.json|settings.json]].
 
 ---
 
 ## Pořadí po implementaci
 
 ```
-Implementace → Code Review (Superpowers) → Simplify → Commit
+Implementace → /code-review → /simplify → Commit
 ```
 
 ---
 
-*Viz také: [[Claude Code - Tipy a Triky]], [[Workflow Proces]]*
+*Viz také: [[Skills]], [[MCP Servery]], [[Workflow Proces]]*
