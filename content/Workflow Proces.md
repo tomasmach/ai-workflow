@@ -48,6 +48,19 @@ Viz [[Git Workflow]].
 
 ---
 
+## Worktree → draft PR lifecycle
+
+Pracuju skoro pořád ve worktrees a v rozdělané práci se orientuju přes PRs, ne přes větve (ty se ne vždy mažou). Od srpna 2026 to řídí skill `file-pr`:
+
+1. **Průběžné prompty** ve worktree → jen rychlé cílené kontroly
+2. **Agent usoudí, že práce ve větvi je hotová** → plná verifikace (testy, proklikat flow, screen/video) a jednoduchý **draft PR** s důkazem. Draft je parkovací stav, ne žádost o review
+3. **„Otevři PR"** → rebase na main, pořádný popis (problém → řešení, žádný inventář změn, na konci blurb jaký model a harness to dělal), `gh pr ready`
+4. **Po merge** → agent zkontroluje osiřelý worktree a navrhne úklid. Nemaže sám
+
+Verifikační rituál se váže na dokončení větve, ne na každý dílčí prompt — u velkého PRka, kde promptím jednu část za druhou, by to jinak bylo divadlo po každé zprávě.
+
+---
+
 ## Code Review a Simplify
 
 Po implementaci vždy spouštím:

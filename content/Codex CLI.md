@@ -5,7 +5,7 @@ tags:
 
 # Codex CLI
 
-Coding agent od OpenAI. Jediná cesta k modelu **gpt-5.6-sol**, který mi dnes dělá většinu backendové a průzkumné práce.
+Coding agent od OpenAI. Jediná cesta k modelu **gpt-5.6-sol**, který je dnes můj primární harness — jede přes něj ~90 % práce.
 
 > Instalace: `codex` CLI, u mě přes [[Nástroje#vite-plus toolchain|~/.vite-plus]]
 
@@ -21,7 +21,7 @@ Coding agent od OpenAI. Jediná cesta k modelu **gpt-5.6-sol**, který mi dnes d
 
 **Computer use** — spuštění aplikace, ověření UI flow, screenshoty, simulátory, nezávislá kontrola běžící aplikace.
 
-Naopak **taste calls** (UI, copy, tvar veřejného API) Codexu nepatří — na to viz [[Výběr Modelu#Rozdělení rolí u UI|rozdělení rolí]].
+**Malé UI úpravy** — „tohle tlačítko udělej takhle" zvládá Sol sám a levně. Hranice se posunula: Claude nastupuje až na větší designovou práci, cross-planning a kritiku, nebo když výstup od Sola není ono. Viz [[Výběr Modelu#Rozdělení rolí|rozdělení rolí]].
 
 ---
 
@@ -47,7 +47,7 @@ Nikdy nejdi nad `high`. Flag posílej vždy explicitně — spoléhat na default
 
 Codex čte `~/.codex/AGENTS.md`, což je jeho ekvivalent [[Globální CLAUDE.md]].
 
-**Obsah držím synchronizovaný s CLAUDE.md.** Když backend a investigace jdou defaultně přes Codex, pravidlo které je jen v CLAUDE.md platí fakticky pro polovinu mé práce. Viz [[Prompting#agents.md - ostatní nástroje|AGENTS.md]].
+**Od srpna 2026 jsou oba soubory identické** — jeden česky psaný dopis s krátkými harness sekcemi na konci (Claude ví, že má delegovat backend a čtení kódu na Codex; Codex ví, že má na velký design navrhnout Claude). Sync je obyčejné `cp`, na další stroje `~/sync-agents-to-nobara.sh`. Viz [[Prompting#agents.md - ostatní nástroje|AGENTS.md]].
 
 ---
 

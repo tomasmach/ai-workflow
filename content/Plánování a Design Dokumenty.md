@@ -127,15 +127,15 @@ Všimni si rozdílu oproti design docu: **konkrétní soubory s čísly řádků
 
 ---
 
-## html-plan
+## html-communication
 
-Na opravdu velké featury mám [[Skills|skill]] `html-plan`, který vygeneruje samostatný interaktivní HTML plán místo dlouhé zprávy v terminálu.
+Na velké featury a vůbec cokoliv, co chci číst mimo terminál, mám [[Skills|skill]] `html-communication` (nahradil starší `html-plan`, po vzoru Theova skillu stejného jména). Plán, spec, findings, srovnání nebo UI mocky vygeneruje jako jeden self-contained HTML soubor a nahraje na postplan.dev, takže dostanu stabilní URL.
 
-**Kdy ho pustit:** featura sahá do víc subsystémů, vyžaduje architektonická rozhodnutí, migrace nebo etapovitou implementaci.
+**Kdy se spustí:** když si řeknu o plán/spec/writeup jako HTML — nebo když prostě napíšu „HTML" na konec promptu. Ta zkratka je přímo v description skillu.
 
-**Kdy ne:** běžné plánování, lokální změny, opravy, obyčejné refaktory. Ani „tenhle task má víc kroků" není důvod.
+**Kdy ne:** HTML, které je součástí produktu. A běžné plánování zůstává v terminálu — samostatný dokument si zaslouží jen věc, kterou budu reálně číst a rozhodovat nad ní.
 
-Ten rozdíl je v [[Globální CLAUDE.md|CLAUDE.md]] napsaný záměrně tvrdě — jinak si AI vyloží „velká featura" hodně velkoryse a vygeneruje HTML plán na tříbodový task.
+U UI mocků skill renderuje skutečné nastylované varianty označené `A`, `B`, `C` vedle sebe — odpověď pak je jen „Do C" a jede se.
 
 ---
 
