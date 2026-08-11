@@ -7,53 +7,36 @@ tags:
 
 Který model na jaký task. Tohle je nejdůležitější rozhodnutí, které při AI-driven developmentu děláš opakovaně — a nejčastěji špatně.
 
----
-
-## Tabulka
-
-Hodnocení 1-10, vyšší = lepší. **Cost** odráží to, co reálně platím (OpenAI má hodně štědré limity), ne ceníkovou cenu. **Intelligence** je jak těžký problém modelu předhodíš bez dozoru. **Taste** pokrývá UI/UX, kvalitu kódu, návrh API a copy.
-
-| Model | Cost | Intelligence | Taste |
-|-------|------|--------------|-------|
-| gpt-5.6-sol | 7 | 9 | 7 |
-| sonnet-5 | 5 | 5 | 7 |
-| opus-4.8 | 4 | 7 | 8 |
-| fable-5 | 2 | 9 | 9 |
+> **Srpen 2026:** tahle stránka dřív stála na ranking tabulce (cost/intelligence/taste per model). Ta vznikla v éře GPT-5.5, kdy Claude orchestroval a Codex dělal jen mechanickou práci. S gpt-5.6-sol se svět otočil: **90 % mojí práce dnes jede v Codexu** a tabulku nahradilo jednodušší rozdělení rolí.
 
 ---
 
-## Pravidla
+## Rozdělení rolí
 
-**Cost je jen tiebreaker.** Když se osy dostanou do konfliktu u něčeho, co má jít do produkce, platí pořadí `intelligence > taste > cost`.
+**Codex (gpt-5.6-sol) je primární.** Je levný a chytrý, takže přes něj jde skoro všechno: backend, skripty, migrace, investigace, čtení kódu — a i malé UI úpravy typu „tohle tlačítko udělej takhle".
 
-**Tabulka je default, ne limit.** Když výstup levnějšího modelu nesplňuje laťku, přepiš to dražším modelem bez ptaní. Eskalace stojí míň než odeslaná průměrná práce.
+**Claude je specialista.** Nastupuje na:
 
-**Nikdy Haiku.** Bez výjimek, ani pod tlakem na cenu. Tohle je změna oproti dřívějšku, kdy jsem Haiku používal na triviální tasky v parallel agentech — nevyplatilo se, kvalita výstupu neodpovídala ani té nízké ceně.
+- větší UI a designovou práci
+- cross-planning napříč projekty
+- nemilosrdnou kritiku a review
+- situace, kdy výstup od Sola není ono
 
----
-
-## Podle typu práce
-
-| Typ práce | Model | Proč |
-|-----------|-------|------|
-| Backend implementace | gpt-5.6-sol | Route handlery, DB/schema, server logika, skripty, migrace, CLI. Cokoliv bez UI vrstvy. Viz [[Codex CLI]] |
-| Čtení a investigace | gpt-5.6-sol | Čtení kódu, grepování logů, trasování bugu. Levné a drží raw soubory mimo Claude kontext |
-| Bulk / mechanická práce | gpt-5.6-sol (low effort) | Jasně zadaná implementace, analýza dat. Sol je silný i na low |
-| UI, copy, tvar API | fable-5 nebo opus-4.8 | Potřebuje taste ≥ 7. Design judgment, ne implementace |
-| Review plánu / implementace | fable-5 nebo opus-4.8 | Volitelně gpt-5.6-sol jako nezávislý třetí pohled |
-
-**Laťka pro backend je vyšší než u ostatních typů:** i drobnost pošli přes Codex, nedělej ji potichu sám jen proto, že je „dost jednoduchá".
+Je dražší, tak ho šetřím na věci, kde je potřeba vkus. Podklad pro tohle rozdělení dal audit mé historie: Claude sessions selhávaly na vkusu, Codex sessions na procesu — každý harness má smysl tam, kde neselhává.
 
 ---
 
-## Rozdělení rolí u UI
+## Automatické vzory
 
-Tohle se plete: *rozhodnout, jak má vypadat veřejné rozhraní* a *implementovat ho* jsou dvě různé práce.
+Věci, které jsem dřív psal ručně v každém promptu (audit našel 544 takových zpráv) a dnes je nese [[Globální CLAUDE.md]]:
 
-- Jak se API jmenuje, jak je strukturované a jak se s ním pracuje → taste model
-- Postavit route za tím rozhraním → Codex
+- **Nemilosrdná kritika** — po každé větší frontend práci automaticky, čerstvým agentem
+- **Dva nezávislé plány** — u větších návrhů dva modely, vzájemná kritika, syntéza
+- **Fresh agent na code review** — nikdy ten, co kód napsal
+- **Eskalace bez ptaní** — když výstup nestačí, přepiš to chytřejším modelem; eskalace stojí míň než odeslaná průměrná práce
+- **Vzájemná delegace** — Claude posílá backend a čtení kódu Codexu (`codex exec -s read-only`), Codex navrhuje Claude na velký design
 
-Codex to postaví, jen by neměl být ten, kdo rozhoduje, jak to má vypadat.
+**Nikdy Haiku.** Bez výjimek, ani pod tlakem na cenu.
 
 ---
 
@@ -76,4 +59,4 @@ Nikdy nejdi nad `high`. Config má vlastní default, proto flag posílej vždy e
 
 ---
 
-*Viz také: [[Codex CLI]], [[AI Agenti]], [[Context Management]]*
+*Viz také: [[Codex CLI]], [[AI Agenti]], [[Context Management]], [[Globální CLAUDE.md]]*

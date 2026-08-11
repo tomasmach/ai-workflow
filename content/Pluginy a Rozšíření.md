@@ -42,7 +42,7 @@ Proto mám `code-simplifier` i samostatný `code-review` plugin **vypnuté** —
 
 ## Co jsem opustil
 
-**Superpowers.** Dlouho to byl můj hlavní plugin — kolekce workflow skills (`brainstorming`, `systematic-debugging`, `writing-plans`, `TDD`, `code-review`). Dnes ho nepoužívám vůbec. Zabudované příkazy pokrývají review a simplify, na plánování mám vlastní [[Skills|skill]] `html-plan` a zbytek jsem nahradil vlastními skills, které sedí přesně na moji práci.
+**Superpowers.** Dlouho to byl můj hlavní plugin — kolekce workflow skills (`brainstorming`, `systematic-debugging`, `writing-plans`, `TDD`, `code-review`). Dnes ho nepoužívám vůbec. Zabudované příkazy pokrývají review a simplify, na plánování mám vlastní [[Skills|skill]] `html-communication` a zbytek jsem nahradil vlastními skills, které sedí přesně na moji práci.
 
 **Samostatný Code Review plugin** — příliš mnoho tokenů oproti zabudovanému `/code-review`.
 

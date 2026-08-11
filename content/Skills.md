@@ -41,7 +41,16 @@ Zkratka: skill mění **chování**, MCP přidává **schopnosti**, plugin je **
 
 ## Moje kategorie
 
-Mám globálně asi 60 skills. Nejsou to všechno moje autorské věci — část jsou instalované sady, které jsem si nechal.
+Mám globálně ~26 skills (v Claude i Codexu). V srpnu 2026 jsem jich 36 promazal — hlavně celý marketing balík (copywriting, CRO, SEO, ads, e-maily, pricing…). Používal jsem je nárazově, ale každý skill má description, který sedí v kontextu **každé session**, takže za nepoužívané skills platíš pořád. Archiv leží vedle skills složky, kdyby něco chybělo.
+
+### Vlastní workflow skilly
+
+Dva nejdůležitější, psané podle vzoru z [Theova videa](https://www.youtube.com/watch?v=e1snsuY4lTI) — description je sada spouštěcích frází, ne popis:
+
+| Skill | K čemu |
+|-------|--------|
+| `file-pr` | Worktree lifecycle: hotová větev → draft PR s důkazem → „otevři PR" → úklid po merge. Viz [[Git Workflow]] |
+| `html-communication` | Plán, spec, findings nebo UI mocky jako HTML, hostované přes postplan.dev. Stačí napsat „HTML" na konec promptu. Nahradil starší `html-plan` |
 
 ### Codex
 
@@ -57,10 +66,10 @@ Viz [[Codex CLI]].
 
 | Skill | K čemu |
 |-------|--------|
-| `html-plan` | Interaktivní HTML plán pro velké featury |
 | `verify` | Ověření změny v reálné běžící aplikaci, ne jen v testech |
 | `full-output-enforcement` | Zákaz zkracování a placeholderů ve výstupu |
-| `humanizer` | Odstranění znaků AI psaní z textu |
+| `humanizer` | Odstranění znaků AI psaní z textu. Od přepisu [[Globální CLAUDE.md]] ho agent pouští sám na každý text pro lidi |
+| `bro` | Vysvětlení srozumitelně, bez žargonu |
 
 ### Obsidian a znalosti
 
@@ -72,13 +81,9 @@ Viz [[Codex CLI]].
 
 ### Design a frontend
 
-`design-taste-frontend`, `high-end-visual-design`, `redesign-existing-projects`, `image-to-code`, `minimalist-ui`, `industrial-brutalist-ui`, `brandkit`, `gpt-taste`, `stitch-design-taste`, `imagegen-frontend-web`, `imagegen-frontend-mobile`
+`design-taste-frontend`, `high-end-visual-design`, `redesign-existing-projects`, `image-to-code`, `minimalist-ui`, `industrial-brutalist-ui`, `brandkit`, `gpt-taste`, `stitch-design-taste`, `imagegen-frontend-web`, `imagegen-frontend-mobile`, `aso`
 
-Anti-slop sada — brání tomu, aby výstup vypadal jako generický AI template.
-
-### Marketing a growth
-
-Největší skupina — copywriting, CRO, SEO, ads, e-maily, pricing, analytics, ASO, PR a další. Používám je nárazově, ale když je potřeba, ušetří spoustu promptování.
+Anti-slop sada — brání tomu, aby výstup vypadal jako generický AI template. `aso` zůstal z marketing balíku, protože App Store listingy jsou moje denní práce (Uprate, Na Pivo).
 
 ---
 
@@ -89,6 +94,8 @@ Největší skupina — copywriting, CRO, SEO, ads, e-maily, pricing, analytics,
 3. Do těla napiš postup
 
 **Nejčastější chyba:** vágní `description`. Skill se pak nikdy nespustí sám a musíš ho volat ručně.
+
+**Druhá nejčastější chyba (Theova lekce):** description jako popis toho, co skill dělá. Description je v kontextu vždycky, i když se skill nepoužije — takže má obsahovat **kdy ho spustit** (trigger fráze), ne **co umí**. „Use when the user asks to file, open, or create a PR" porazí odstavec o tom, jak skill funguje. Extrém, který funguje: `html-communication` má v description i „or if they mention 'HTML' with no additional context" — stačí napsat „HTML" na konec promptu.
 
 ---
 
